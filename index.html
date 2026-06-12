@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="calculator">
+
+    <div class="top-bar">
+      <span class="title">CALC</span>
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">DEG</button>
+    </div>
+
+    <div class="display">
+      <div class="expression" id="expression"></div>
+      <div class="result" id="result">0</div>
+    </div>
+
+    <div class="buttons">
+
+      <!-- Row 1: Scientific -->
+      <button class="btn sci" onclick="appendFunc('sin(')">sin</button>
+      <button class="btn sci" onclick="appendFunc('cos(')">cos</button>
+      <button class="btn sci" onclick="appendFunc('tan(')">tan</button>
+      <button class="btn sci" onclick="appendFunc('log(')">log</button>
+      <button class="btn sci" onclick="appendFunc('ln(')">ln</button>
+
+      <!-- Row 2: Scientific -->
+      <button class="btn sci" onclick="appendFunc('√(')">√</button>
+      <button class="btn sci" onclick="appendOp('^')">xʸ</button>
+      <button class="btn sci" onclick="appendFunc('abs(')">|x|</button>
+      <button class="btn sci" onclick="appendConstant('π')">π</button>
+      <button class="btn sci" onclick="appendConstant('e')">e</button>
+
+      <!-- Row 3 -->
+      <button class="btn clear" onclick="clearAll()">AC</button>
+      <button class="btn delete" onclick="deleteLast()">⌫</button>
+      <button class="btn operator" onclick="appendOp('(')"> ( </button>
+      <button class="btn operator" onclick="appendOp(')')"> ) </button>
+      <button class="btn operator" onclick="appendOp('÷')">÷</button>
+
+      <!-- Row 4 -->
+      <button class="btn number" onclick="appendNum('7')">7</button>
+      <button class="btn number" onclick="appendNum('8')">8</button>
+      <button class="btn number" onclick="appendNum('9')">9</button>
+      <button class="btn operator" onclick="appendOp('%')">%</button>
+      <button class="btn operator" onclick="appendOp('×')">×</button>
+
+      <!-- Row 5 -->
+      <button class="btn number" onclick="appendNum('4')">4</button>
+      <button class="btn number" onclick="appendNum('5')">5</button>
+      <button class="btn number" onclick="appendNum('6')">6</button>
+      <button class="btn operator" onclick="appendOp('−')">−</button>
+      <button class="btn operator" onclick="appendOp('+')">+</button>
+
+      <!-- Row 6 -->
+      <button class="btn number" onclick="appendNum('1')">1</button>
+      <button class="btn number" onclick="appendNum('2')">2</button>
+      <button class="btn number" onclick="appendNum('3')">3</button>
+      <button class="btn number" onclick="appendNum('0')">0</button>
+      <button class="btn number" onclick="appendDot()">.</button>
+
+      <!-- Row 7: Equals full width -->
+      <button class="btn equals full" onclick="calculate()">=</button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
